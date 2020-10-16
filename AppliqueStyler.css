@@ -1,0 +1,215 @@
+/* BORDER-BOX DECLARATION */
+/* specified width = content + padding-left + padding-right
++ border-left + border-right */
+*{
+    box-sizing: border-box;
+}
+
+/* MOBILE FIRST */
+/* The following style sheets apply to only mobile devices */
+
+/* Preloader styles */
+.preload{
+    position: fixed;
+    z-index: 2;
+    top: 0px; left: 0px; right: 0px;
+    width: 100%; height: 100vh;
+    background-color: rgb(248, 216, 35);
+    transition: opacity 5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.preload-finish{
+    opacity: 0;
+    pointer-events: none;
+}
+.head{
+    color: chocolate;
+    position: absolute;
+    top: 3%;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-variant: small-caps;
+    text-shadow: 5px 2px 3px rgb(240, 153, 91);
+}
+.photo1, .photo2, .photo3{
+    position: absolute;
+}
+.photo1{
+    top: 1%;
+    right: 0px;
+    height: 400px;
+    animation: photo1 1s ease infinite alternate;
+}
+.photo2{
+    top: 35%;
+    height: 200px;
+    animation: photo2 1s ease infinite alternate;
+}
+.photo3{
+    top: 50%;
+    left: 0px;
+    height: 100px;
+    animation: photo3 1s ease infinite alternate;
+}
+@keyframes photo1{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(50px);
+    }
+}
+
+@keyframes photo2{
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(-100px);
+    }
+}
+@keyframes photo3{
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateY(-50px);
+    }
+}
+
+/* Main-page styles */
+body{
+    margin: 0;
+}
+.wrapper{
+    width: 100%;
+}
+.division{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    background: linear-gradient(black, blue);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+.heading,
+.button,
+.paragraph{
+    text-align: center;
+    padding: 0;
+    font-family: sans-serif;
+}
+.heading{
+    flex: 0 0 92%;
+    margin-left: 4%;
+    margin-right: 4%;
+    color: white;
+}
+.button{
+    flex: 0 0 16%;
+    margin-left: 42%;
+    margin-right: 42%;
+    height: 40px;
+    background-color: rgb(255, 136, 0);
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    padding: 3px;
+}
+.button:hover{
+    background-color: rgb(56, 31, 2);
+    color: white;
+}
+.paragraph{
+    flex: 0 0 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: white;
+    opacity: 0.6;
+    font-size: 18px;
+}
+.div{
+    background-color: white;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: stretch;
+    width: 100%;
+    padding-top: 300px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0;
+}
+.watermark{
+    flex: 0 0 100%;
+    background-color: white;
+    display: block;
+    color: rgb(35, 31, 32);
+    font-family: "Proxima Nova",-apple-system,system-ui,system-ui,"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+    cursor: default;
+    font-size: 17px;
+}
+.watermark-heading{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.watermark-paragraph{
+    padding: 0;
+    margin: 0 10px 0 10px;
+}
+.container{
+    flex: 0 0 100%;
+    margin-bottom: 10%;
+    height: 300px;
+    animation: dogPhoto 10s ease;
+    box-shadow: 10px 10px 10px 5px rgb(77, 76, 76); 
+}
+.image{
+    width: 100%;
+    height: 100%;
+}
+@keyframes dogPhoto{
+    from{
+        opacity: 0.0;
+    }
+    to{
+        opacity: 1.0;
+    }
+}
+
+
+/* TABLET */
+/* The following stylesheets apply to tablet-size devices */
+@media only screen and (min-width: 480px) and (max-width: 779px){
+.div{
+    flex-flow: row wrap;
+}
+.container{
+    flex: 0 0 44%;
+    margin-left: 4%;
+    margin-right: 0;
+    margin-bottom: 5%;
+    animation: dogPhoto 5s ease;
+}
+}
+
+
+/* DESKTOP */
+/* The following stylesheets apply to desktop devices only */
+@media only screen and (min-width: 780px){
+.div{
+    flex-flow: row wrap;
+}
+.container{
+    flex: 0 0 30%;
+    margin-left: 2.5%;
+    margin-right: 0;
+    margin-bottom: 5%;
+    animation: dogPhoto 5s ease;
+}
+}
